@@ -31,7 +31,7 @@ if(isset($_POST['login']))
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css2/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -50,8 +50,7 @@ if(isset($_POST['login']))
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email"/>
-							</div>
-							<a href="forgot-password.php">Forgot Password?</a>
+                            </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="password" placeholder="Password"/>
@@ -69,7 +68,7 @@ if(isset($_POST['login']))
 
 							 ?>
                             <div class="form-group form-button">
-                                <input type="submit" name="login" id="login" class="form-submit" value="Log in"/>
+                                <input type="submit" name="signIn" id="signIn" class="form-submit" value="Log in"/>
                             </div>
                         </form>
                         
@@ -82,6 +81,6 @@ if(isset($_POST['login']))
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js2/main.js"></script>
+    <script src="js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

@@ -31,12 +31,16 @@ if(isset($_POST['login']))
 </head>
 <body>
 
+
 	<div class="row">
 			<h2 align="center">Daily Expense Tracker</h2>
 	<hr />
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">Log in</div>
+				
+<figure><img src="img/signin-image.jpg" alt="sing up image" class="center"></figure>
+
 				<div class="panel-body">
 					<p style="font-size:16px; color:red" align="center"> <?php if($msg){
     echo $msg;

@@ -57,6 +57,7 @@ return true;
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">Sign Up</div>
+				<figure><img src="img/signup-image.jpg" alt="sing up image" class="center"></figure>
 				<div class="panel-body">
 					<form role="form" action="" method="post" id="" name="signup" onsubmit="return checkpass();">
 						<p style="font-size:16px; color:red" align="center"> <?php if($msg){
