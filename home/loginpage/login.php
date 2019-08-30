@@ -10,7 +10,7 @@ if (isset($_SESSION['login_id'])) {
 
 	if (isset($_POST['signIn'])) {
 		if (empty($_POST['email']) || empty($_POST['password'])) {
-		echo "Username and password should not be empty";	
+		echo "";	
 		}
 		else {
 
@@ -97,6 +97,14 @@ if (isset($_SESSION['login_id'])) {
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
+							  <?php
+                                     if (isset($_POST['signIn'])) {
+										if (empty($_POST['email']) || empty($_POST['password'])) {
+										echo "Username and Password should not be Empty";	
+										}
+									} 
+
+							 ?>
                             <div class="form-group form-button">
                                 <input type="submit" name="signIn" id="signIn" class="form-submit" value="Log in"/>
                             </div>
