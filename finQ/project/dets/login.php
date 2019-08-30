@@ -29,7 +29,8 @@ if(isset($_POST['login']))
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
+    <link href="img/logo.png" rel="icon">
+  <link href="img/logo.png" rel="apple-touch-icon">
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
 </head>

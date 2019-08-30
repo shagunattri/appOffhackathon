@@ -23,17 +23,18 @@ if(isset($_POST['login']))
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Daily Expense Tracker - Login</title>
+	<title>finQ - Login</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+	<link href="img/logo.png" rel="icon">
+  <link href="img/logo.png" rel="apple-touch-icon">
 </head>
 <body>
 
 
 	<div class="row">
-			<h2 align="center">Daily Expense Tracker</h2>
+			<h1 align="center">finQ</h1>
 	<hr />
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
