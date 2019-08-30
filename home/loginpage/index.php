@@ -10,7 +10,7 @@ if (isset($_SESSION["login_id"])) {
 }
 if (isset($_POST['signUp'])) {
 	if (empty($_POST['fullName']) || empty($_POST['email']) || empty($_POST['newPassword'])) {
-		echo "Please fill up all the required field.";
+		echo "";
 	}
 	else{
 		$fullName = $_POST['fullName'];
@@ -92,6 +92,13 @@ if (isset($_POST['signUp'])) {
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
+                            <?php
+                                    if (isset($_POST['signUp'])) {
+                                        if (empty($_POST['fullName']) || empty($_POST['email']) || empty($_POST['newPassword'])) {
+                                            echo "Please fill up all the required field.";
+                                        }
+                                    }
+                               ?>
                             <div class="form-group form-button">
                                 <input type="submit" name="signUp" id="signup" class="form-submit" value="Register"/>
                             </div>
