@@ -191,10 +191,7 @@ echo "0";
 echo $sum_total_expense;
 }
 
-	?></span></div>
-
-
-					</div>
+	?></span></div> </div>
 				
 				</div>
 
