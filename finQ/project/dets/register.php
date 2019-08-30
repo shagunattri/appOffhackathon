@@ -37,6 +37,8 @@ $msg="This email  associated with another account";
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="img/logo.png" rel="icon">
+  <link href="img/logo.png" rel="apple-touch-icon">
 	<script type="text/javascript">
 function checkpass()
 {

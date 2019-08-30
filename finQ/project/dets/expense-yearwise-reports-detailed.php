@@ -22,7 +22,8 @@ if (strlen($_SESSION['detsuid']==0)) {
 	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-	
+	<link href="img/logo.png" rel="icon">
+  <link href="img/logo.png" rel="apple-touch-icon">
 </head>
 <body>
 	<?php include_once('includes/header.php');?>

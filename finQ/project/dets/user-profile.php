@@ -38,6 +38,8 @@ if (strlen($_SESSION['detsuid']==0)) {
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<link href="img/logo.png" rel="icon">
+  <link href="img/logo.png" rel="apple-touch-icon">
 </head>
 <body>
 	<?php include_once('includes/header.php');?>
