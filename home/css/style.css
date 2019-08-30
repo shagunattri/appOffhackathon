@@ -186,7 +186,7 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 90px;
 }
 
 /*--------------------------------------------------------------
@@ -1418,8 +1418,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-info img {
-  height: 40px;
-  margin-bottom: 10px;
+  height: 90px;
+  margin-bottom: 0px;
 }
 
 #footer .footer-top .footer-info p {
