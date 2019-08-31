@@ -28,7 +28,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>finQ  || Add income</title>
+	<title>finQ  || Add Income</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -77,7 +77,8 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 								<div class="form-group">
 									<label>Date of Income</label>
 									<input class="form-control" type="date" value="" name="dateincome" required="true">
-								</div>
+                                </div>
+                                <div class="form-group">
 								<label>Type</label>
 									<input type="text" class="form-control" name="type" value="" required="true">
 								</div>
