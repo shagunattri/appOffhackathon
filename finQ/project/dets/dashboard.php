@@ -19,7 +19,8 @@ if (strlen($_SESSION['detsuid']==0)) {
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+	<script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+      <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -228,10 +229,10 @@ $userid=$_SESSION['detsuid'];
 $query7=mysqli_query($con,"select sum(Amount)  as total from tbincome where UserId='$userid';");
 $result7=mysqli_fetch_array($query7);
 $sum_saving=$result7['total'];
-$sum_saving=$sum_amount-$sum_total_expense;
+$sum_saving=$sum_amount-$sum_monthly_expense;
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Saving</h4>
+						<h4>Last 30 days Saving</h4>
 						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
 echo "0";
 } else if ($sum_saving<0){
