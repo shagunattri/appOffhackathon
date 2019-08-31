@@ -1,4 +1,4 @@
-<?php
+<?php  
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
@@ -6,15 +6,29 @@ if (strlen($_SESSION['detsuid']==0)) {
   header('location:logout.php');
   } else{
 
-  
+//code deletion
+if(isset($_GET['delid']))
+{
+$rowid=intval($_GET['delid']);
+$query=mysqli_query($con,"delete from tbincome where ID='$rowid'");
+if($query){
+echo "<script>alert('Record successfully deleted');</script>";
+echo "<script>window.location.href='manage-income.php'</script>";
+} else {
+echo "<script>alert('Something went wrong. Please try again');</script>";
 
-  ?>
+}
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>finQ || Expense Report</title>
+	<title>finQ || Manage Income</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -22,6 +36,10 @@ if (strlen($_SESSION['detsuid']==0)) {
 	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 	<link href="img/logo.png" rel="icon">
   <link href="img/logo.png" rel="apple-touch-icon">
 </head>
@@ -35,7 +53,7 @@ if (strlen($_SESSION['detsuid']==0)) {
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Expense Report</li>
+				<li class="active">Income</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -48,59 +66,47 @@ if (strlen($_SESSION['detsuid']==0)) {
 				
 				
 				<div class="panel panel-default">
-					<div class="panel-heading">Expense Report</div>
+					<div class="panel-heading">Income</div>
 					<div class="panel-body">
-
+						<p style="font-size:16px; color:red" align="center"> <?php if($msg){
+    echo $msg;
+  }  ?> </p>
 						<div class="col-md-12">
-					
-<?php
-$fdate=$_POST['fromdate'];
- $tdate=$_POST['todate'];
-$rtype=$_POST['requesttype'];
-?>
-<h5 align="center" style="color:blue">Expense Report from <?php echo $fdate?> to <?php echo $tdate?></h5>
-<hr />
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
-                                        <tr>
-                                            <tr>
-              <th>S.NO</th>
-              <th>Date</th>
-              <th>Expense Amount</th>
+							
+							<div class="table-responsive">
+            <table class="table table-bordered mg-b-0">
+              <thead>
+                <tr>
+                  <th>S.NO</th>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Income Date</th>
+                  <th>Action</th>
                 </tr>
-                                        </tr>
-                                        </thead>
- <?php
-$userid=$_SESSION['detsuid'];
-$ret=mysqli_query($con,"SELECT ExpenseDate,SUM(ExpenseCost) as totaldaily FROM tblexpense  where (ExpenseDate BETWEEN '$fdate' and '$tdate') && (UserId='$userid') group by ExpenseDate");
+              </thead>
+              <?php
+              $userid=$_SESSION['detsuid'];
+$ret=mysqli_query($con,"select * from tbincome where UserId='$userid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
-              
+              <tbody>
                 <tr>
                   <td><?php echo $cnt;?></td>
-            
-                  <td><?php  echo $row['ExpenseDate'];?></td>
-                  <td><?php  echo $ttlsl=$row['totaldaily'];?></td>
-           
-           
+              
+                  <td><?php  echo $row['Type'];?></td>
+                  <td><?php  echo $row['Amount'];?></td>
+                  <td><?php  echo $row['IncomeDate'];?></td>
+                  <td><a href="manage-income.php?delid=<?php echo $row['ID'];?>">Delete</a>
                 </tr>
-                <?php
-                $totalsexp+=$ttlsl; 
+                <?php 
 $cnt=$cnt+1;
 }?>
-
- <tr>
-  <th colspan="2" style="text-align:center">Grand Total</th>     
-  <td><?php echo $totalsexp;?></td>
- </tr>     
-
-                                    </table>
-
-
-
-
+               
+              </tbody>
+            </table>
+          </div>
 						</div>
 					</div>
 				</div><!-- /.panel-->
@@ -120,4 +126,4 @@ $cnt=$cnt+1;
 	
 </body>
 </html>
-<?php } ?>
+<?php }  ?>

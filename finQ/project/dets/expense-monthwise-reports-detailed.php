@@ -14,7 +14,7 @@ if (strlen($_SESSION['detsuid']==0)) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Daily Expense Tracker || Monthwise Expense Report</title>
+	<title>finQ || Monthwise Expense Report</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
