@@ -249,7 +249,32 @@ echo $sum_saving;
 				</div>
 
 			</div>
-			
+			<div class="col-xs-6 col-md-3">
+				<div class="panel panel-default">
+					<?php
+//Yearly Expense
+$userid=$_SESSION['detsuid'];
+$query8=mysqli_query($con,"select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
+$result8=mysqli_fetch_array($query8);
+$sum_amount=$result8['totalexpense'];
+ ?>
+					<div class="panel-body easypiechart-panel">
+						<h4>Reward System</h4>
+						<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
+echo "0";
+} else if ($sum_saving<1000){
+echo "Not Elligible";
+}
+else{
+echo "Elligible";
+
+}
+
+	?></span></div> </div>
+				
+				</div>
+
+			</div>
 		
 </div><!--/.row-->
 	</div>	<!--/.main-->
