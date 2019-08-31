@@ -162,7 +162,7 @@ $sum_yearly_expense=$result4['yearlyexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Current Year Expenses</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_yearly_expense;?>" ><span class="percent"><?php if($sum_yearly_expense==""){
+						<div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $sum_yearly_expense;?>" ><span class="percent"><?php if($sum_yearly_expense==""){
 echo "0";
 } else {
 echo $sum_yearly_expense;
@@ -188,7 +188,7 @@ $sum_total_expense=$result5['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Total Expenses</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_total_expense;?>" ><span class="percent"><?php if($sum_total_expense==""){
+						<div class="easypiechart" id="easypiechart-orange" data-percent="<?php echo $sum_total_expense;?>" ><span class="percent"><?php if($sum_total_expense==""){
 echo "0";
 } else {
 echo $sum_total_expense;
@@ -210,7 +210,7 @@ $sum_amount=$result6['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Income</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
+						<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
 echo "0";
 } else {
 echo $sum_amount;
