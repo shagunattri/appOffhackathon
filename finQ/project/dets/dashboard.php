@@ -199,56 +199,58 @@ echo $sum_total_expense;
 
 			</div>
 			<div class="col-xs-6 col-md-3">
-				
 				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-<?php
-//Today Expense
+					<?php
+//Yearly Expense
 $userid=$_SESSION['detsuid'];
-$tdate=date('Y-m-d');
-$query=mysqli_query($con,"select sum(ExpenseCost)  as todaysexpense from tblexpense where (ExpenseDate)='$tdate' && (UserId='$userid');");
-$result=mysqli_fetch_array($query);
-$sum_today_expense=$result['todaysexpense'];
- ?> 
-
+$query6=mysqli_query($con,"select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
+$result6=mysqli_fetch_array($query6);
+$sum_amount=$result6['totalexpense'];
+ ?>
+					<div class="panel-body easypiechart-panel">
 						<h4>Income</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $sum_today_expense;?>" ><span class="percent"><?php if($sum_today_expense==""){
+						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
 echo "0";
 } else {
-echo $sum_today_expense;
+echo $sum_amount;
 }
 
-	?></span></div>
-					</div>
+	?></span></div> </div>
+				
 				</div>
+
 			</div>
 			<div class="col-xs-6 col-md-3">
-				
 				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-<?php
-//Today Expense
+					<?php
+//Yearly Expense
 $userid=$_SESSION['detsuid'];
-$tdate=date('Y-m-d');
-$query=mysqli_query($con,"select sum(ExpenseCost)  as todaysexpense from tblexpense where (ExpenseDate)='$tdate' && (UserId='$userid');");
-$result=mysqli_fetch_array($query);
-$sum_today_expense=$result['todaysexpense'];
- ?> 
-
+$query7=mysqli_query($con,"select sum(Amount)  as total from tbincome where UserId='$userid';");
+$result7=mysqli_fetch_array($query7);
+$sum_saving=$result7['total'];
+$sum_saving=$sum_amount-$sum_total_expense;
+ ?>
+					<div class="panel-body easypiechart-panel">
 						<h4>Saving</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $sum_today_expense;?>" ><span class="percent"><?php if($sum_today_expense==""){
+						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
 echo "0";
-} else {
-echo $sum_today_expense;
+} else if ($sum_saving<0){
+echo '0';
+}
+else
+{
+echo $sum_saving;
+
 }
 
-	?></span></div>
-					</div>
+	?></span></div> </div>
+				
 				</div>
+
 			</div>
-		</div>
+			
 		
-		<!--/.row-->
+</div><!--/.row-->
 	</div>	<!--/.main-->
 	<?php include_once('includes/footer.php');?>
 	<script src="js/jquery-1.11.1.min.js"></script>
