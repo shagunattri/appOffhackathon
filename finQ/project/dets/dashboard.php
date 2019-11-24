@@ -68,7 +68,7 @@ $result=mysqli_fetch_array($query);
 $sum_today_expense=$result['todaysexpense'];
  ?> 
 
-						<h4>Today's Expense</h4>
+						<h4><b>Today's Expense</b></h4>
 						<div style="color: #ef4040" class="easypiechart" data-percent="<?php echo $sum_today_expense;?>" ><span class="percent"><?php if($sum_today_expense==""){
 echo "0";
 } else {
@@ -92,7 +92,7 @@ $result3=mysqli_fetch_array($query3);
 $sum_monthly_expense=$result3['monthlyexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Last 30day's Expenses</h4>
+						<h4><b>Last 30day's Expenses</b></h4>
 						<div class="easypiechart" style="color: #ef4040" data-percent="<?php echo $sum_monthly_expense;?>" ><span class="percent"><?php if($sum_monthly_expense==""){
 echo "0";
 } else {
@@ -117,7 +117,7 @@ $result4=mysqli_fetch_array($query4);
 $sum_yearly_expense=$result4['yearlyexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Current Year Expenses</h4>
+						<h4><b>Current Year Expenses</b></h4>
 						<div class="easypiechart" style="color: #ef4040" data-percent="<?php echo $sum_yearly_expense;?>" ><span class="percent"><?php if($sum_yearly_expense==""){
 echo "0";
 } else {
@@ -143,7 +143,7 @@ $result5=mysqli_fetch_array($query5);
 $sum_total_expense=$result5['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Total Expenses</h4>
+						<h4><b>Total Expenses</b></h4>
 						<div class="easypiechart" style="color: #ef4040" data-percent="<?php echo $sum_total_expense;?>" ><span class="percent"><?php if($sum_total_expense==""){
 echo "0";
 } else {
@@ -165,7 +165,7 @@ $result6=mysqli_fetch_array($query6);
 $sum_amount=$result6['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Income</h4>
+						<h4><b>Income</b></h4>
 						<div class="easypiechart" style= "color: #1ebfae" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
 echo "0";
 } else {
@@ -180,6 +180,9 @@ echo $sum_amount;
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
+
+//Monthly Expense
+
 //Last 30 days saving
 $userid=$_SESSION['detsuid'];
 $query7=mysqli_query($con,"select sum(Amount)  as total from tbincome where UserId='$userid';");
@@ -188,7 +191,7 @@ $sum_saving=$result7['total'];
 $sum_saving=$sum_amount-$sum_monthly_expense;
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Last 30 days Saving</h4>
+						<h4><b>Last 30 days Saving</b></h4>
 						<div class="easypiechart" style= "color: #1ebfae"  data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
 echo "0";
 } else if ($sum_saving<0){
@@ -216,7 +219,7 @@ $sum_saving=$result7['total'];
 $sum_saving=$sum_amount-$sum_monthly_expense;
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Credit</h4>
+						<h4><b>Credit</b></h4>
 						<div class="easypiechart" style= "color: #1ebfae" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
 echo "0";
 } else if ($sum_saving<($sum_amount*15)/100){
@@ -243,7 +246,7 @@ $result8=mysqli_fetch_array($query8);
 $sum_amount=$result8['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Reward System</h4>
+						<h4><b>Reward System</b></h4>
 						<div class="easypiechart" style= "color: #1ebfae" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
 echo "0";
 } else if ($sum_saving<($sum_amount*15)/100){
