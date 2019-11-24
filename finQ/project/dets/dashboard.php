@@ -82,51 +82,7 @@ echo $sum_today_expense;
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
-//Yestreday Expense
-$userid=$_SESSION['detsuid'];
-$ydate=date('Y-m-d',strtotime("-1 days"));
-$query1=mysqli_query($con,"select sum(ExpenseCost)  as yesterdayexpense from tblexpense where (ExpenseDate)='$ydate' && (UserId='$userid');");
-$result1=mysqli_fetch_array($query1);
-$sum_yesterday_expense=$result1['yesterdayexpense'];
- ?> 
-					<div class="panel-body easypiechart-panel">
-						<h4>Yesterday's Expense</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="<?php echo $sum_yesterday_expense;?>" ><span class="percent"><?php if($sum_yesterday_expense==""){
-echo "0";
-} else {
-echo $sum_yesterday_expense;
-}
 
-	?></span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<?php
-//Weekly Expense
-$userid=$_SESSION['detsuid'];
- $pastdate=  date("Y-m-d", strtotime("-1 week")); 
-$crrntdte=date("Y-m-d");
-$query2=mysqli_query($con,"select sum(ExpenseCost)  as weeklyexpense from tblexpense where ((ExpenseDate) between '$pastdate' and '$crrntdte') && (UserId='$userid');");
-$result2=mysqli_fetch_array($query2);
-$sum_weekly_expense=$result2['weeklyexpense'];
- ?>
-					<div class="panel-body easypiechart-panel">
-						<h4>Last 7day's Expense</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $sum_weekly_expense;?>"><span class="percent"><?php if($sum_weekly_expense==""){
-echo "0";
-} else {
-echo $sum_weekly_expense;
-}
-
-	?></span></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<?php
 //Monthly Expense
 $userid=$_SESSION['detsuid'];
  $monthdate=  date("Y-m-d", strtotime("-1 month")); 
@@ -153,7 +109,7 @@ echo $sum_monthly_expense;
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
-//Yearly Expense
+//Current Year Expense
 $userid=$_SESSION['detsuid'];
  $cyear= date("Y");
 $query4=mysqli_query($con,"select sum(ExpenseCost)  as yearlyexpense from tblexpense where (year(ExpenseDate)='$cyear') && (UserId='$userid');");
@@ -180,7 +136,7 @@ echo $sum_yearly_expense;
 		<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
-//Yearly Expense
+//Totaal Expense
 $userid=$_SESSION['detsuid'];
 $query5=mysqli_query($con,"select sum(ExpenseCost)  as totalexpense from tblexpense where UserId='$userid';");
 $result5=mysqli_fetch_array($query5);
@@ -202,7 +158,7 @@ echo $sum_total_expense;
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
-//Yearly Expense
+//Income 
 $userid=$_SESSION['detsuid'];
 $query6=mysqli_query($con,"select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
 $result6=mysqli_fetch_array($query6);
@@ -224,7 +180,7 @@ echo $sum_amount;
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
-//Yearly Expense
+//Last 30 days saving
 $userid=$_SESSION['detsuid'];
 $query7=mysqli_query($con,"select sum(Amount)  as total from tbincome where UserId='$userid';");
 $result7=mysqli_fetch_array($query7);
@@ -252,7 +208,35 @@ echo $sum_saving;
 			<div class="col-xs-6 col-md-3">
 				<div class="panel panel-default">
 					<?php
-//Yearly Expense
+//Credits
+$userid=$_SESSION['detsuid'];
+$query7=mysqli_query($con,"select sum(Amount)  as total from tbincome where UserId='$userid';");
+$result7=mysqli_fetch_array($query7);
+$sum_saving=$result7['total'];
+$sum_saving=$sum_amount-$sum_monthly_expense;
+ ?>
+					<div class="panel-body easypiechart-panel">
+						<h4>Credits</h4>
+						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
+echo "0";
+} else if ($sum_saving<0){
+echo '0';
+}
+else
+{
+echo $sum_saving;
+
+}
+
+	?></span></div> </div>
+				
+				</div>
+
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<div class="panel panel-default">
+					<?php
+//Reward System
 $userid=$_SESSION['detsuid'];
 $query8=mysqli_query($con,"select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
 $result8=mysqli_fetch_array($query8);
