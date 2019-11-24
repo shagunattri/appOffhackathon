@@ -69,7 +69,7 @@ $sum_today_expense=$result['todaysexpense'];
  ?> 
 
 						<h4>Today's Expense</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $sum_today_expense;?>" ><span class="percent"><?php if($sum_today_expense==""){
+						<div style="color: #ef4040" class="easypiechart" data-percent="<?php echo $sum_today_expense;?>" ><span class="percent"><?php if($sum_today_expense==""){
 echo "0";
 } else {
 echo $sum_today_expense;
@@ -93,7 +93,7 @@ $sum_monthly_expense=$result3['monthlyexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Last 30day's Expenses</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_monthly_expense;?>" ><span class="percent"><?php if($sum_monthly_expense==""){
+						<div class="easypiechart" style="color: #ef4040" data-percent="<?php echo $sum_monthly_expense;?>" ><span class="percent"><?php if($sum_monthly_expense==""){
 echo "0";
 } else {
 echo $sum_monthly_expense;
@@ -118,7 +118,7 @@ $sum_yearly_expense=$result4['yearlyexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Current Year Expenses</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="<?php echo $sum_yearly_expense;?>" ><span class="percent"><?php if($sum_yearly_expense==""){
+						<div class="easypiechart" style="color: #ef4040" data-percent="<?php echo $sum_yearly_expense;?>" ><span class="percent"><?php if($sum_yearly_expense==""){
 echo "0";
 } else {
 echo $sum_yearly_expense;
@@ -144,7 +144,7 @@ $sum_total_expense=$result5['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Total Expenses</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="<?php echo $sum_total_expense;?>" ><span class="percent"><?php if($sum_total_expense==""){
+						<div class="easypiechart" style="color: #ef4040" data-percent="<?php echo $sum_total_expense;?>" ><span class="percent"><?php if($sum_total_expense==""){
 echo "0";
 } else {
 echo $sum_total_expense;
@@ -166,7 +166,7 @@ $sum_amount=$result6['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Income</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
+						<div class="easypiechart" style= "color: #1ebfae" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
 echo "0";
 } else {
 echo $sum_amount;
@@ -189,7 +189,7 @@ $sum_saving=$sum_amount-$sum_monthly_expense;
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Last 30 days Saving</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
+						<div class="easypiechart" style= "color: #1ebfae"  data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
 echo "0";
 } else if ($sum_saving<0){
 echo '0';
@@ -217,7 +217,7 @@ $sum_saving=$sum_amount-$sum_monthly_expense;
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Credit</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
+						<div class="easypiechart" style= "color: #1ebfae" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
 echo "0";
 } else if ($sum_saving<($sum_amount*15)/100){
 echo '0';
@@ -244,7 +244,7 @@ $sum_amount=$result8['totalexpense'];
  ?>
 					<div class="panel-body easypiechart-panel">
 						<h4>Reward System</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
+						<div class="easypiechart" style= "color: #1ebfae" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
 echo "0";
 } else if ($sum_saving<($sum_amount*15)/100){
 echo "Not Elligible";
