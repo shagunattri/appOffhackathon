@@ -216,15 +216,15 @@ $sum_saving=$result7['total'];
 $sum_saving=$sum_amount-$sum_monthly_expense;
  ?>
 					<div class="panel-body easypiechart-panel">
-						<h4>Credits</h4>
+						<h4>Credit</h4>
 						<div class="easypiechart" id="easypiechart-red" data-percent="<?php echo $sum_saving?>" ><span class="percent"><?php if($sum_saving==""){
 echo "0";
-} else if ($sum_saving<0){
+} else if ($sum_saving<($sum_amount*15)/100){
 echo '0';
 }
 else
 {
-echo $sum_saving;
+echo ($sum_saving*15)/100;
 
 }
 
@@ -246,7 +246,7 @@ $sum_amount=$result8['totalexpense'];
 						<h4>Reward System</h4>
 						<div class="easypiechart" id="easypiechart-teal" data-percent="<?php echo $sum_amount;?>" ><span class="percent"><?php if($sum_amount==""){
 echo "0";
-} else if ($sum_saving<1000){
+} else if ($sum_saving<($sum_amount*15)/100){
 echo "Not Elligible";
 }
 else{
