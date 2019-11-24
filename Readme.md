@@ -3,6 +3,10 @@
 finQ is an online web app which incorporates gamification and product simulation into financial products.
 It helps provide the end user with Increasing financial confidence and providing financial guidance.
 
+## Personal bot Integration
+
+We added DialogFlow by google to help with personalised assistance to help navigate around fin
+
 ## __Idea Abstract__
 
 Efficient way for Saving and Accuured Expense for a strong Finance - finQ -Team Knownsense
@@ -31,3 +35,4 @@ We ensure to our users that their data with us will be secured and safe, there w
 - VenoBox
 - Superfish
 - Easing.js
+- Dialogflow

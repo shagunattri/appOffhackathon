@@ -53,7 +53,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Expense</li>
+				<li class="active">User Data</li>
 			</ol>
 		</div><!--/.row-->
 		

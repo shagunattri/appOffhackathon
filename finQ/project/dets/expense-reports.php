@@ -35,7 +35,7 @@ if (strlen($_SESSION['detsuid']==0)) {
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Daywise Expense Report</li>
+				<li class="active"> Expense Report</li>
 			</ol>
 		</div><!--/.row-->
 		

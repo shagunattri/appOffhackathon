@@ -31,7 +31,7 @@ $name=$row['FullName'];
             
            
             <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-                <em class="fa fa-navicon">&nbsp;</em>Expenses <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+                <em class="fa fa-navicon">&nbsp;</em>User Data <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-1">
                 <li><a class="" href="add-income.php">
@@ -57,13 +57,6 @@ $name=$row['FullName'];
                     <li><a class="" href="expense-datewise-reports.php">
                         <span class="fa fa-arrow-right">&nbsp;</span> Daywise Expenses
                     </a></li>
-                    <li><a class="" href="expense-monthwise-reports.php">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Monthwise Expenses
-                    </a></li>
-                    <li><a class="" href="expense-yearwise-reports.php">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Yearwise Expenses
-                    </a></li>
-                    
                 </ul>
             </li>
 
