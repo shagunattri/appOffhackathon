@@ -54,7 +54,7 @@ return true;
 </script>
 <body>
 	<div class="row">
-			<h2 align="center">finQ</h2>
+			<h1 align="center">finQ</h1>
 	<hr />
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
@@ -82,7 +82,8 @@ return true;
 								<input type="password" class="form-control" id="repeatpassword" name="repeatpassword" placeholder="Repeat Password" required="true">
 							</div>
 							<div class="checkbox">
-								<button type="submit" value="submit" name="submit" class="btn btn-primary">Register</button><span style="padding-left:250px">
+								<br>
+								<button type="submit" value="submit" name="submit" class="btn btn-primary">Register</button><span style="padding-left:350px">
 								<a href="index.php" class="btn btn-primary">Login</a></span>
 							</div>
 							 </fieldset>
@@ -91,6 +92,23 @@ return true;
 			</div>
 		</div><!-- /.col-->
 	</div><!-- /.row -->	
+	<style>
+	body {
+	background: linear-gradient(to right, #ffafbd , #ffc3a0); /* Standard syntax */
+}
+
+</style>
+<style>
+	h1 {
+			margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 40px;
+	font-family: 'Orienta', sans-serif;
+	}
+</style>	
+
 	
 
 <script src="js/jquery-1.11.1.min.js"></script>

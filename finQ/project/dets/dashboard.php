@@ -164,10 +164,14 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 						<?php
 							//Income 
 							$userid = $_SESSION['detsuid'];
-							$query6 = mysqli_query($con, "select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
-							$result6 = mysqli_fetch_array($query6);
-							$sum_amount = $result6['totalexpense'];
-							?>
+							$monthdate =  date("Y-m-d", strtotime("-1 month"));
+                            $crrntdte = date("Y-m-d");
+                            $query6 = mysqli_query($con, "select
+							sum(Amount)  as  totalexpense from tbincome where ((IncomeDate)
+							between '$monthdate' and '$crrntdte') && UserId='$userid';");
+                            $result6 = mysqli_fetch_array($query6);
+                            $sum_amount = $result6['totalexpense'];
+                            ?>
 						<div class="panel-body easypiechart-panel">
 							<h4><b>Income</b></h4>
 							<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_amount; ?>"><span class="percent"><?php if ($sum_amount == "") {

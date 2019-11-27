@@ -55,9 +55,9 @@ if(isset($_POST['login']))
 							<div class="form-group">
 								<input class="form-control" placeholder="Password" name="password" type="password" value="" required="true">
 							</div>
-							<div class="checkbox">
-								<button type="submit" value="login" name="login" class="btn btn-primary">login</button><span style="padding-left:250px">
-								<a href="register.php" class="btn btn-primary">Register</a></span>
+							<hr>
+							<div class="checkbox"><a href="register.php" class="btn btn-primary">Sign Up</a><span style="padding-right: 350px"></span>
+								<button type="submit" value="login" name="login" class="btn btn-primary">Login</button>
 							</div>
 							</fieldset>
 					</form>
@@ -65,6 +65,20 @@ if(isset($_POST['login']))
 			</div>
 		</div><!-- /.col-->
 	</div><!-- /.row -->	
+<style>
+	body {
+	background: linear-gradient(to right, #ffafbd , #ffc3a0); /* Standard syntax */
+</style>
+<style>
+	h1 {
+			margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 40px;
+	font-family: 'Orienta', sans-serif;
+	}
+</style>
 	
 
 <script src="js/jquery-1.11.1.min.js"></script>
