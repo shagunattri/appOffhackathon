@@ -62,7 +62,7 @@ $name=$row['FullName'];
 
 
 
-             <li><a href="credits.php"><img src="https://img.icons8.com/android/24/000000/coins.png">&nbsp; Credit</a></li> 
+             <li><a href="credit.php"><img src="https://img.icons8.com/android/24/000000/coins.png">&nbsp; Credit</a></li> 
              <li><a href="wallet.php"><em class="fa fa-google-wallet">&nbsp;</em> Wallet</a></li>
             <li><a href="user-profile.php"><em class="fa fa-user">&nbsp;</em> Profile</a></li>
              <li><a href="change-password.php"><em class="fa fa-clone">&nbsp;</em> Change Password</a></li>
