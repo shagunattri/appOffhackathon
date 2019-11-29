@@ -272,7 +272,18 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 
 			</div>
 			<!--/.row-->
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+
+					<div class="panel panel-default">
+						<div class="panel-body easypiechart-panel">
+							
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
 		<!--/.main-->
 		<?php include_once('includes/footer.php'); ?>
 		<script src="js/jquery-1.11.1.min.js"></script>

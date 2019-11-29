@@ -18,7 +18,10 @@ if (strlen($_SESSION['detsuid']==0)) {
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/wallet.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="img/logo.png" rel="icon">
+	<link href="img/logo.png" rel="apple-touch-icon">
 </head>
 <body>
 	<?php include_once('includes/header.php');?>
@@ -54,9 +57,61 @@ if (strlen($_SESSION['detsuid']==0)) {
 					</div>
 				</div><!-- /.panel-->
 			</div><!-- /.col-->
-			<?php include_once('includes/footer.php');?>
+
+			<!-- Example single danger button -->
 		</div><!-- /.row -->
-	</div><!--/.main-->
+		<div class="col-xs-6 col-md-5">
+					<div class="panel panel-default">
+						<?php
+							//Reward System
+							$userid = $_SESSION['detsuid'];
+							$query8 = mysqli_query($con, "select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
+							$result8 = mysqli_fetch_array($query8);
+							$sum_amount = $result8['totalexpense'];
+							?>
+						<div class="panel-body easypiechart-panel">
+							<h4><b>Wallet Balance</b></h4>
+							<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_amount; ?>"><span class="percent"><?php if ($sum_amount == "") {
+																																					echo "0";
+																																				} else if ($sum_saving < ($sum_amount * 15) / 100) {
+																																					echo "0";
+																																				} else {
+																																					echo "
+																																					";
+																																				}
+
+																																				?></span></div>
+						</div>
+
+					</div>
+
+				</div>
+<div class="col-xs-6 col-md-4">
+	<div class="panel panel-default">
+		
+		<div class="dropdown">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		  <button class="dropbtn">Add money</button>
+		  <div class="dropdown-content">
+		    <a href="#">BHIM UPI</a>
+		    <a href="#">Credit/Debit Card</a>
+		    <a href="#">NetBanking</a>
+		    <a href="#">Credits</a>
+		  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+		<div class="dropdown">
+		  <button class="dropbtn">Withdraw Money</button>
+		  <div class="dropdown-content">
+		    <a href="#">BHIM UPI</a>
+		    <a href="#">Credit/Debit Card</a>
+		    <a href="#">NetBanking</a>
+		  </div>
+		</div>
+	</div>
+</div>		
+
+			<br><br><?php include_once('includes/footer.php');?>
+	</div><!--/.main-->`
+
 	
 <script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
