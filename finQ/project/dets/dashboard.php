@@ -20,7 +20,7 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/datepicker3.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
-		
+
 		<script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
 		<script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 		<!--Custom Font-->
@@ -119,12 +119,12 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 						<div class="panel-body easypiechart-panel">
 							<h4><b>Current Year Expenses</b></h4>
 							<div class="easypiechart" style="color: #ef4040" data-percent="<?php echo $sum_yearly_expense; ?>"><span class="percent"><?php if ($sum_yearly_expense == "") {
-																																							echo "0";
-																																						} else {
-																																							echo $sum_yearly_expense;
-																																						}
+																																								echo "0";
+																																							} else {
+																																								echo $sum_yearly_expense;
+																																							}
 
-																																						?></span></div>
+																																							?></span></div>
 						</div>
 
 					</div>
@@ -158,29 +158,29 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 			</div>
 			<!--/.row-->
 			<div class="row">
-				
+
 				<div class="col-xs-6 col-md-3">
 					<div class="panel panel-default">
 						<?php
 							//Income 
 							$userid = $_SESSION['detsuid'];
 							$monthdate =  date("Y-m-d", strtotime("-1 month"));
-                            $crrntdte = date("Y-m-d");
-                            $query6 = mysqli_query($con, "select
+							$crrntdte = date("Y-m-d");
+							$query6 = mysqli_query($con, "select
 							sum(Amount)  as  totalexpense from tbincome where ((IncomeDate)
 							between '$monthdate' and '$crrntdte') && UserId='$userid';");
-                            $result6 = mysqli_fetch_array($query6);
-                            $sum_amount = $result6['totalexpense'];
-                            ?>
+							$result6 = mysqli_fetch_array($query6);
+							$sum_amount = $result6['totalexpense'];
+							?>
 						<div class="panel-body easypiechart-panel">
 							<h4><b>Income</b></h4>
 							<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_amount; ?>"><span class="percent"><?php if ($sum_amount == "") {
-																																					echo "0";
-																																				} else {
-																																					echo $sum_amount;
-																																				}
+																																						echo "0";
+																																					} else {
+																																						echo $sum_amount;
+																																					}
 
-																																				?></span></div>
+																																					?></span></div>
 						</div>
 
 					</div>
@@ -256,14 +256,14 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 						<div class="panel-body easypiechart-panel">
 							<h4><b>Reward System</b></h4>
 							<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_amount; ?>"><span class="percent"><?php if ($sum_amount == "") {
-																																					echo "0";
-																																				} else if ($sum_saving < ($sum_amount * 15) / 100) {
-																																					echo "Not Elligible";
-																																				} else {
-																																					echo "Elligible";
-																																				}
+																																						echo "0";
+																																					} else if ($sum_saving < ($sum_amount * 15) / 100) {
+																																						echo "Not Elligible";
+																																					} else {
+																																						echo "Elligible";
+																																					}
 
-																																				?></span></div>
+																																					?></span></div>
 						</div>
 
 					</div>
@@ -271,17 +271,8 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 				</div>
 
 			</div>
-			<!--/.row-->
-			<div class="row">
-				<div class="col-xs-6 col-md-3">
 
-					<div class="panel panel-default">
-						<div class="panel-body easypiechart-panel">
-							
-						</div>
-					</div>
-				</div>
-			</div>
+
 		</div>
 
 		<!--/.main-->
@@ -294,17 +285,8 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 		<script src="js/easypiechart-data.js"></script>
 		<script src="js/bootstrap-datepicker.js"></script>
 		<script src="js/custom.js"></script>
-		<script>
-			window.onload = function() {
-				var chart1 = document.getElementById("line-chart").getContext("2d");
-				window.myLine = new Chart(chart1).Line(lineChartData, {
-					responsive: true,
-					scaleLineColor: "rgba(0,0,0,.2)",
-					scaleGridLineColor: "rgba(0,0,0,.05)",
-					scaleFontColor: "#c5c7cc"
-				});
-			};
-		</script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 	</body>
 

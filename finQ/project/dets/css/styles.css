@@ -898,8 +898,7 @@ h1.page-header {
   display: block;
   position: absolute;
   font-size: 26px;
-  top: 38px;
-  width: 120px; }
+  width: 100px; }
 
 #easypiechart-blue .percent {
   color: #30a5ff; }

@@ -112,9 +112,9 @@ if (strlen($_SESSION['detsuid']==0)) {
 							<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_amount; ?>"><span class="percent"><?php if ($sum_amount == "") {
 																																					echo "0";
 																																				} else if ($sum_saving < ($sum_amount * 15) / 100) {
-																																					echo "Not Elligible";
+																																					echo "Not Eligible";
 																																				} else {
-																																					echo "Elligible";
+																																					echo "Eligible";
 																																				}
 
 																																				?></span></div>
@@ -201,7 +201,7 @@ if (strlen($_SESSION['detsuid']==0)) {
 							<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_amount; ?>"><span class="percent"><?php if ($sum_amount == "") {
 																																					echo "0";
 																																				} else if ($sum_saving < ($sum_amount * 15) / 100) {
-																																					echo "Sorry, no copoun fotr you";
+																																					echo "Nope";
 																																				} else {
 																																				
 																																					echo strtoupper(uniqid());
