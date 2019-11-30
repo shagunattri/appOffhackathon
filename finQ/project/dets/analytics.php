@@ -60,7 +60,7 @@ if (strlen($_SESSION['detsuid'] == 0)) {
                 </div><!-- /.col-->
                 <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href = 'hrefs/expenseincome.html';">Expense and Income Analysis</button>
                 <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href = 'hrefs/expensetime.html';">Expense and Time Analysis</button>
-                <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href = 'hrefs/creditscore.html';">Credit Score Analysis</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href = 'hrefs/creditscore.html';">Credit and Expense Analysis</button>
                 <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href = 'hrefs/itemexpense.html';">Item Based Expense Analysis</button>
                 <!-- Example single danger button -->
             </div><!-- /.row -->

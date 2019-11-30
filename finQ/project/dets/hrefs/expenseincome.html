@@ -1,12 +1,15 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>  
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../img/logo.png" rel="icon">
+    <link href="../img/logo.png" rel="apple-touch-icon">
+    <link rel="stylesheet" type="text/css" href="expenseincome.css">
     <title>Expense,Saving and Income Ananlysis</title>
 </head>
-<body>
+<body class="center">
         <div id="piechart"></div>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -26,7 +29,7 @@
         ]);
         
           // Optional; add a title and set the width and height of the chart
-          var options = {'title':'Expense,Saving and Income Analysis', 'width':550, 'height':500};
+          var options = {'title':'Expense,Saving and Income Analysis', 'width':1000, 'height':1000};
         
           // Display the chart inside the <div> element with id="piechart"
           var chart = new google.visualization.PieChart(document.getElementById('piechart'));
