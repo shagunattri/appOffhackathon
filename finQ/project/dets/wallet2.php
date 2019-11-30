@@ -68,22 +68,40 @@ if (strlen($_SESSION['detsuid'] == 0)) {
 					<?php
 						//Reward System
 						$userid = $_SESSION['detsuid'];
-						$query8 = mysqli_query($con, "select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
-						$result8 = mysqli_fetch_array($query8);
-						$sum_amount = $result8['totalexpense'];
+                        $monthdate =  date("Y-m-d", strtotime("-1 month"));
+                        $crrntdte = date("Y-m-d");
+                        $query6 = mysqli_query($con, "select
+								sum(Amount)  as  totalexpense from tbincome where ((IncomeDate)
+								between '$monthdate' and '$crrntdte') && UserId='$userid';");
+                        $result6 = mysqli_fetch_array($query6);
+                        $sum_amount = $result6['totalexpense'];
+                        $userid = $_SESSION['detsuid'];
+                        $monthdate =  date("Y-m-d", strtotime("-1 month"));
+                        $crrntdte = date("Y-m-d");
+                        $query3 = mysqli_query($con, "select sum(ExpenseCost)  as monthlyexpense from tblexpense where ((ExpenseDate) between '$monthdate' and '$crrntdte') && (UserId='$userid');");
+                        $result3 = mysqli_fetch_array($query3);
+                        $sum_monthly_expense = $result3['monthlyexpense'];
+
+                        $userid = $_SESSION['detsuid'];
+                        $query7 = mysqli_query($con, "select sum(Amount)  as total from tbincome where UserId='$userid';");
+                        $result7 = mysqli_fetch_array($query7);
+                        $sum_saving = $result7['total'];
+                        $sum_saving = $sum_amount - $sum_monthly_expense;
+                        $userid = $_SESSION['detsuid'];
+                        $query8 = mysqli_query($con, "select sum(Amount)  as totalexpense from tbincome where UserId='$userid';");
+                        $result8 = mysqli_fetch_array($query8);
+                        $sum_amount = $result8['totalexpense'];
+                        $wallet = (13 * (($sum_saving * 15) / 100)) / 100;
 						?>
 					<div class="panel-body easypiechart-panel">
 						<h4><b>Wallet Balance</b></h4>
 						<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_amount; ?>"><span class="percent"><?php if ($sum_amount == "") {
-																																					echo "0";
-																																				} else if ($sum_saving < ($sum_amount * 15) / 100) {
-																																					echo "0";
-																																				} else {
-																																					echo "
-																																					";
-																																				}
+                                                                                                                                                    echo "0";
+                                                                                                                                                } else {
+                                                                                                                                                    echo $wallet;
+                                                                                                                                                }
 
-																																				?></span></div>
+                                                                                                                                                ?></span></div>
 					</div>
 
 				</div>
