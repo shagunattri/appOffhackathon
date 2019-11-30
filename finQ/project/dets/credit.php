@@ -86,7 +86,7 @@ if (strlen($_SESSION['detsuid']==0)) {
 								<h4><b>Credit</b></h4>
 								<div class="easypiechart" style="color: #1ebfae" data-percent="<?php echo $sum_saving ?>"><span class="percent"><?php if ($sum_saving == "") {
 																																						echo "0";
-																																					} else if ($sum_saving < ($sum_amount * 15) / 100) {
+																																					} else if ($sum_saving <= ($sum_amount * 15) / 100) {
 																																						echo '0';
 																																					} else {
 																																						echo ($sum_saving * 15) / 100;
@@ -203,8 +203,7 @@ if (strlen($_SESSION['detsuid']==0)) {
 																																				} else if ($sum_saving < ($sum_amount * 15) / 100) {
 																																					echo "Nope";
 																																				} else {
-																																				
-																																					echo strtoupper(uniqid());
+																																			        echo strtoupper(uniqid());
 																																					
 																																				}
 

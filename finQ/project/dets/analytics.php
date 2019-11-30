@@ -6,8 +6,6 @@ if (strlen($_SESSION['detsuid'] == 0)) {
     header('location:logout.php');
 } else {
 
-
-
     ?>
     <!DOCTYPE html>
     <html>
@@ -15,12 +13,13 @@ if (strlen($_SESSION['detsuid'] == 0)) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>finQ || Analytics </title>
+        <title>finQ || Analytics </title>fas
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/datepicker3.css" rel="stylesheet">
         <link href="css/wallet.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
+        <link href="css/analytics.css" rel="stylesheet">
         <link href="img/logo.png" rel="icon">
         <link href="img/logo.png" rel="apple-touch-icon">
     </head>
@@ -59,7 +58,10 @@ if (strlen($_SESSION['detsuid'] == 0)) {
                         </div>
                     </div><!-- /.panel-->
                 </div><!-- /.col-->
-
+                <button type="button" class="btn btn-primary btn-lg">Expense and Income Analysis</button>
+                <button type="button" class="btn btn-primary btn-lg">Expense and Time Analysis</button>
+                <button type="button" class="btn btn-primary btn-lg">Credit Score Analysis</button>
+                <button type="button" class="btn btn-primary btn-lg">Item Based Expense Analysis</button>
                 <!-- Example single danger button -->
             </div><!-- /.row -->
             <?php include_once('includes/footer.php'); ?>
