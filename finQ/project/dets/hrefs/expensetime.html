@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Expense and Time Analysis"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",       
+		dataPoints: [
+			{ y: 45000 },
+			{ y: 41400},
+			{ y: 52000, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+			{ y: 46000 },
+			{ y: 45000 },
+			{ y: 50000 },
+			{ y: 48000 },
+			{ y: 48000 },
+			{ y: 41000 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+			{ y: 50000 },
+			{ y: 48000 },
+			{ y: 51000 }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
